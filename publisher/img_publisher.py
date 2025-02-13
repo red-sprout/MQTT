@@ -2,10 +2,14 @@ import paho.mqtt.client as mqtt
 import base64
 import os
 import time
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 # .env 파일로 별도 관리
 BROKER = os.getenv("BROKER")
-PORT = os.getenv("PORT")
+PORT = int(os.getenv("PORT"))
 TOPIC = os.getenv("TOPIC")
 
 # 이미지가 들어있는 상위 디렉토리
